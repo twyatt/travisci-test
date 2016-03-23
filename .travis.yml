@@ -5,6 +5,8 @@ before_install: |
     wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-macosx-x64.dmg -O jdk-8u73-macosx-x64.dmg
     hdiutil mount jdk-8u73-macosx-x64.dmg
     sudo installer -pkg "/Volumes/JDK 8 Update 73/JDK 8 Update 73.pkg" -target LocalSystem
+    java -Xmx32m -version
+    javac -J-Xmx32m -version
   fi
 
 matrix:
@@ -16,7 +18,7 @@ matrix:
         api_key:
           secure: "mbtpqs4Lry+AVgXBdbyUyC4IQnp/73Ay8fWLqtHYWPjsXi0LEX+gupWoLVz2Nu57t5HmqtC5ahJ7Pkm5cLWU7xiqbnYYu0uWVZy3oJFG/6nQObn2pUG8+8cGit5xNB27etLkRBAuMeuhrWO3vHZ9IS7zET/bB/Zepllvgrgr92kGbCgw4EsgrAv3AouX4lP4d1MKwAjoXinndkFTSY1j3kaYdgLt1xPVrca36WNs4IDvDQrsr4jQorUcwJJJaIfLYTMEXCAQp0IAnXseY6vjy1D8pUqLpPSCDQH3h+0xKxPkMxxlJiDcBBgoE6V2eIqpt9gxz1pSfnuNWNq0QdlQ87p6hFRo4SjxHo33fq4W74OMmzOEG9fS3ai7PCHmbk5w+S6iUzVi04IoP2/1YnprfBh98eLpKzvHgphNsgknWfpy3RRv0ZptwxUeAB5wN7vzDLC0dJsN+bN7vTR4StAJkecHg3dTX83E3h3DyxS28Ai5Fap3H9YCKzJKtA8+XeJPIRXZGzxvfTCCRj67tCKgfd0DkGSJvnYomKpdd2Oj7sfE0DgYCeqGC8OC6eJ28j7ktTHbLKhpaRPu/woYm22jyezfYsVEohTFEf6Q8Es9GR564K+It++IiOozDk6mG3RQb6TpkrTQfM8fz0HWiOeMJVSJYYGDUusuu6aoYUEE60I="
         file:
-          - "client/build/jfx/native/TravisCI Test.dmg"
+          - "client/build/jfx/native/TravisCI\ Test.dmg"
         skip_cleanup: true
         on:
           tags: true
